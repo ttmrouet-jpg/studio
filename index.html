@@ -563,7 +563,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.25);
   }
   .video.playing .hero-location-chip {
-    animation: chipIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(3.3s - var(--seek-offset, 0s)) forwards;
+    animation: chipIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 0.3s - var(--seek-offset, 0s)) forwards;
   }
   @keyframes chipIn { to { opacity: 1; transform: translateX(0); } }
 
@@ -582,7 +582,7 @@
     transform: translateY(10px);
   }
   .video.playing .hero-prefix {
-    animation: titleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(3.5s - var(--seek-offset, 0s)) forwards;
+    animation: titleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 0.5s - var(--seek-offset, 0s)) forwards;
   }
   .hero-title-main {
     font-size: 28px;
@@ -594,7 +594,7 @@
     transform: translateY(15px);
   }
   .video.playing .hero-title-main {
-    animation: titleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(3.7s - var(--seek-offset, 0s)) forwards;
+    animation: titleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 0.7s - var(--seek-offset, 0s)) forwards;
   }
   .hero-title-sub {
     font-size: 17px;
@@ -607,7 +607,7 @@
     transform: translateY(15px);
   }
   .video.playing .hero-title-sub {
-    animation: titleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(3.9s - var(--seek-offset, 0s)) forwards;
+    animation: titleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 0.9s - var(--seek-offset, 0s)) forwards;
   }
   @keyframes titleIn { to { opacity: 1; transform: translateY(0); } }
 
@@ -624,7 +624,7 @@
     opacity: 0;
   }
   .video.playing .hero-description {
-    animation: justFade 0.4s ease-out calc(4.4s - var(--seek-offset, 0s)) forwards;
+    animation: justFade 0.4s ease-out calc(var(--hero-start, 3s) + 1.4s - var(--seek-offset, 0s)) forwards;
   }
   @keyframes justFade { to { opacity: 1; } }
 
@@ -660,9 +660,9 @@
     flex-shrink: 0;
     margin-top: -1px;
   }
-  .video.playing .hero-bullet:nth-child(1) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.0s - var(--seek-offset, 0s)) forwards; }
-  .video.playing .hero-bullet:nth-child(2) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.2s - var(--seek-offset, 0s)) forwards; }
-  .video.playing .hero-bullet:nth-child(3) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.4s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .hero-bullet:nth-child(1) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.0s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .hero-bullet:nth-child(2) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.2s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .hero-bullet:nth-child(3) { animation: bulletIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.4s - var(--seek-offset, 0s)) forwards; }
   @keyframes bulletIn { to { opacity: 1; transform: translateX(0); } }
 
   /* Bottom row in panel — DPE + surface + price */
@@ -690,7 +690,7 @@
     transform: translateY(15px);
   }
   .video.playing .hero-surface-tag {
-    animation: tagIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.5s - var(--seek-offset, 0s)) forwards;
+    animation: tagIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.5s - var(--seek-offset, 0s)) forwards;
   }
   .hero-price-tag {
     margin-left: auto;
@@ -707,7 +707,7 @@
     white-space: nowrap;
   }
   .video.playing .hero-price-tag {
-    animation: tagIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.7s - var(--seek-offset, 0s)) forwards;
+    animation: tagIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.7s - var(--seek-offset, 0s)) forwards;
   }
   @keyframes tagIn { to { opacity: 1; transform: translateY(0); } }
 
@@ -728,7 +728,7 @@
     transform: translateY(15px);
   }
   .video.playing .dpe-badge:not(.hidden) {
-    animation: tagIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(4.6s - var(--seek-offset, 0s)) forwards !important;
+    animation: tagIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 1.6s - var(--seek-offset, 0s)) forwards !important;
   }
   .dpe-badge .dpe-label {
     font-size: 8px;
@@ -757,7 +757,7 @@
   .dpe-letter.dpe-empty { display: none; }
   .dpe-badge.hidden { display: none !important; }
   .video.playing .dpe-badge:not(.hidden) {
-    animation: dpeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(5.0s - var(--seek-offset, 0s)) forwards;
+    animation: dpeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--hero-start, 3s) + 2.0s - var(--seek-offset, 0s)) forwards;
   }
   @keyframes dpeIn { to { opacity: 1; transform: translateX(0); } }
 
@@ -1557,6 +1557,151 @@
   .controls .btn { white-space: nowrap; padding: 8px 11px; }
   .controls .timecode { white-space: nowrap; }
 
+
+  /* ============ 11. Pastille rythmique retirée ============ */
+  .beat-pulse { display: none !important; }
+
+  /* ============ 6. OUVERTURE « ACCROCHE SUR PHOTO » ============ */
+  .scene.off { display: none !important; }
+  .scene-intro2 { background: linear-gradient(135deg, var(--sh-teal) 0%, var(--sh-teal-dark) 100%); }
+  .video.playing .scene-intro2 { animation: introHold calc(var(--intro-dur, 2.5s) + 0.45s) linear calc(0s - var(--seek-offset, 0s)) 1 forwards; }
+  @keyframes introHold { 0%, 86% { opacity: 1; } 100% { opacity: 0; } }
+  .scene-intro2 .intro2-bg { transform: scale(1.14); }
+  .video.playing .scene-intro2 .intro2-bg { animation: i2zoom calc(var(--intro-dur, 2.5s) + 0.5s) ease-out calc(0s - var(--seek-offset, 0s)) both; }
+  @keyframes i2zoom { from { transform: scale(1.14) translateZ(0); } to { transform: scale(1.02) translateZ(0); } }
+  .intro2-shade { position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.15) 30%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.72) 100%); }
+  .intro2-logo { position:absolute; top:15%; left:50%; width:82px; transform:translateX(-50%); background:#fff; padding:8px 10px; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.35); opacity:0; }
+  .video.playing .intro2-logo { animation: justFade .35s ease-out calc(0.05s - var(--seek-offset, 0s)) forwards; }
+  .intro2-text { position:absolute; left:6%; right:6%; top:40%; text-align:center; color:#fff; }
+  .intro2-badge { display:inline-block; background: var(--sh-teal); color:#fff; padding:6px 16px; border-radius:20px; font-size:13px; font-weight:900; letter-spacing:2.5px; text-transform:uppercase; box-shadow:0 6px 18px rgba(0,0,0,.35); opacity:0; transform: rotate(-3deg) scale(0); white-space:nowrap; }
+  .intro2-badge:empty { display:none; }
+  .video.playing .intro2-badge { animation: stampIn .5s cubic-bezier(0.34,1.56,0.64,1) calc(0.15s - var(--seek-offset, 0s)) forwards; }
+  .intro2-title { margin-top:12px; font-size:34px; font-weight:900; line-height:1; letter-spacing:-1px; text-shadow:0 4px 22px rgba(0,0,0,.6); white-space:nowrap; opacity:0; transform:translateY(24px); }
+  .video.playing .intro2-title { animation: slideUp .5s cubic-bezier(0.34,1.56,0.64,1) calc(0.3s - var(--seek-offset, 0s)) forwards; }
+  .intro2-sub { margin-top:8px; font-size:13px; font-weight:800; letter-spacing:4px; text-transform:uppercase; white-space:nowrap; text-shadow:0 2px 10px rgba(0,0,0,.6); opacity:0; }
+  .intro2-sub:empty { display:none; }
+  .video.playing .intro2-sub { animation: justFade .4s ease-out calc(0.45s - var(--seek-offset, 0s)) forwards; }
+  .intro2-line { display:inline-block; margin-top:14px; background:#fff; color:var(--sh-dark); padding:8px 18px; border-radius:6px; font-size:20px; font-weight:900; white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:0; transform:scale(.6); }
+  .intro2-line:empty { display:none; }
+  .intro2-line s { color: var(--sh-red); font-size: .62em; margin-right: 8px; font-weight: 800; }
+  .video.playing .intro2-line { animation: popIn .5s cubic-bezier(0.34,1.56,0.64,1) calc(0.6s - var(--seek-offset, 0s)) forwards; }
+
+  /* ============ 4. MODÈLES ============ */
+  .tpl-baisse .intro2-badge, .tpl-vendu .intro2-badge { background: var(--sh-red); }
+  .tpl-portes .intro2-badge { background: var(--sh-yellow); color: var(--sh-dark); }
+  .tpl-recrutement .intro2-badge { background: var(--sh-yellow); color: var(--sh-dark); }
+  .tpl-vendu .hero-price-tag, .tpl-vendu .hero-legal,
+  .tpl-recrutement .hero-bottom-row, .tpl-recrutement .hero-legal { display: none !important; }
+  .hero-oldprice { display:block; font-size:9px; font-weight:800; text-decoration: line-through; color:#FFB4B4; line-height:1; margin-bottom:2px; }
+  .hero-oldprice:empty { display:none; }
+  .sold-stamp { display:none; position:absolute; top:44%; left:50%; z-index:13; transform: translate(-50%,-50%) rotate(-12deg) scale(0);
+    border:4px solid #fff; color:#fff; background: rgba(229,57,53,.92); padding:6px 22px; font-size:34px; font-weight:900; letter-spacing:4px; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,.35); opacity:0; }
+  .tpl-vendu .sold-stamp { display:block; }
+  .video.playing .sold-stamp { animation: soldIn .5s cubic-bezier(0.34,1.56,0.64,1) calc(var(--hero-start, 3s) + 0.5s - var(--seek-offset, 0s)) forwards; }
+  @keyframes soldIn { to { opacity:1; transform: translate(-50%,-50%) rotate(-12deg) scale(1); } }
+  .hero-event { display:none; position:absolute; top:calc(29% + 34px); left:12px; z-index:12; background: var(--sh-yellow); color: var(--sh-dark);
+    padding:5px 10px; font-size:10px; font-weight:900; letter-spacing:.5px; border-radius:4px; text-transform:uppercase; box-shadow:0 4px 10px rgba(0,0,0,.25); opacity:0; white-space:nowrap; }
+  .tpl-portes .hero-event { display:block; }
+  .tpl-portes .hero-dots.tl { display:none; }
+  .video.playing .hero-event { animation: chipIn .5s cubic-bezier(0.34,1.56,0.64,1) calc(var(--hero-start, 3s) + 0.5s - var(--seek-offset, 0s)) forwards; transform: translateX(-30px); }
+
+  /* ============ 1. MENTIONS LÉGALES ============ */
+  .ges-badge .ges-letter { width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; color:#2A2A2A; }
+  .ges-A { background:#F6EDFD; } .ges-B { background:#E4C7FB; } .ges-C { background:#D5A9F7; } .ges-D { background:#C48EF6; }
+  .ges-E { background:#B072EF; color:#fff !important; } .ges-F { background:#9A4FE4; color:#fff !important; } .ges-G { background:#8237D2; color:#fff !important; }
+  .hero-legal { margin-top:44px; font-size:7.6px; line-height:1.3; color:#3d3d3d; font-weight:600; opacity:0; }
+  .hero-legal:empty { display:none; }
+  .hero-legal .excess { display:block; color:#C62828; font-weight:900; font-size:9.5px; text-transform:uppercase; letter-spacing:.2px; margin-bottom:1px; }
+  .video.playing .hero-legal { animation: justFade .4s ease-out calc(var(--hero-start, 3s) + 1.6s - var(--seek-offset, 0s)) forwards; }
+  .hero-legal:not(:empty) + .hero-title-block { margin-top: 8px; }
+  .legal-box { margin-top:10px; padding:10px; border:1px dashed var(--sh-teal); border-radius:10px; background: var(--sh-teal-50); }
+  .legal-box .legal-title { font-weight:800; color:var(--sh-teal-dark); font-size:11px; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+
+  /* ============ 5. SOUS-TITRES ============ */
+  .captions { position:absolute; left:6%; right:6%; top:33%; z-index:55; text-align:center; pointer-events:none; }
+  .captions span { display:inline; background: rgba(0,0,0,.66); color:#fff; font-size:15px; font-weight:800; line-height:1.45;
+    padding:3px 9px; border-radius:7px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .captions span:empty { display:none; }
+  .cap-row { display:flex; gap:6px; align-items:center; margin-bottom:5px; }
+  .cap-row input[type=number] { width:62px; padding:6px; font-size:12px; }
+  .cap-row input[type=text] { flex:1; padding:6px 8px; font-size:12px; }
+  .cap-row button { flex-shrink:0; }
+  .rec-live { color: var(--sh-red); font-weight:900; animation: playingGlow 1s infinite alternate; }
+
+  /* ============ 7. FORMATS ============ */
+  .screen.fmt-45 { aspect-ratio: 4 / 5; }
+  .screen.fmt-169 { aspect-ratio: 16 / 9; }
+  .phone.fmt-169 { width: 553px; }
+  .screen.fmt-45 .safe-guides, .screen.fmt-169 .safe-guides { display:none !important; }
+  /* 4:5 */
+  .fmt-45 .hero-photo-wrap { height: 47%; }
+  .fmt-45 .hero-info-panel { height: 56%; }
+  .fmt-45 .hero-brand-mark, .fmt-45 .hero-location-chip { top: 10%; }
+  .fmt-45 .hero-event { top: calc(10% + 34px); }
+  .fmt-45 .hero-dots.tl { top: calc(10% + 36px); }
+  .fmt-45 .hero-title-main { font-size: 24px; }
+  .fmt-45 .hero-description { -webkit-line-clamp: 2; display:-webkit-box; -webkit-box-orient: vertical; overflow:hidden; }
+  .fmt-45 .subtitle-bar { bottom: 12%; }
+  .fmt-45 .outro-logo-top { top: 4%; width: 46px; }
+  .fmt-45 .outro-content { inset: 17% 0 19% 0; }
+  .fmt-45 .negotiator-photo { width: 70px; height: 70px; }
+  .fmt-45 .cta-pulse { bottom: 8.5%; }
+  .fmt-45 .agency-line { bottom: 3%; }
+  .fmt-45 .intro2-logo { top: 7%; width: 70px; }
+  .fmt-45 .intro2-text { top: 36%; }
+  .fmt-45 .captions { top: 26%; }
+  /* 16:9 */
+  .fmt-169 .hero-photo-wrap { width: 56%; height: 100%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%); }
+  .fmt-169 .hero-info-panel { left: 52%; right: 0; top: 0; bottom: 0; height: 100%; padding: 14px 16px; }
+  .fmt-169 .hero-brand-mark { top: 14px; right: auto; left: 12px; }
+  .fmt-169 .hero-location-chip { top: auto; bottom: 16px; }
+  .fmt-169 .hero-event { top: auto; bottom: 50px; }
+  .fmt-169 .hero-dots.tl { display:none; }
+  .fmt-169 .hero-dots.br-panel { bottom: 14px; }
+  .fmt-169 .hero-bullets { top: auto !important; bottom: 14px; right: auto; left: 16px; flex-direction: row; width: auto; gap: 12px; }
+  .fmt-169 .hero-title-block { margin-right: 0; }
+  .fmt-169 .hero-description { margin-right: 0; }
+  .fmt-169 .sold-stamp { top: 50%; }
+  .fmt-169 .subtitle-bar { bottom: 13%; left: 18%; right: 18%; }
+  .fmt-169 .highlight-title { font-size: 34px; }
+  .fmt-169 .outro-logo-top { top: 7%; width: 54px; left: 8%; transform: none; }
+  .fmt-169 .outro-content { inset: 12% 8% 24% 8%; display: grid; grid-template-columns: auto 1fr; column-gap: 26px; align-content: center; justify-items: start; text-align: left; }
+  .fmt-169 .negotiator-photo { grid-row: 1 / span 4; width: 120px; height: 120px; align-self: center; }
+  .fmt-169 .negotiator-name { margin-top: 0; }
+  .fmt-169 .hook-phrase { max-width: 340px; }
+  .fmt-169 .contact-block { flex-direction: row; max-width: none; justify-content: flex-start; }
+  .fmt-169 .cta-pulse { bottom: 8%; }
+  .fmt-169 .agency-line { bottom: 3%; }
+  .fmt-169 .intro2-logo { top: 8%; width: 70px; }
+  .fmt-169 .intro2-text { top: 34%; }
+  .fmt-169 .captions { top: 12%; left: 20%; right: 20%; }
+  .fmt-169 .intro-logo-wrap img { max-width: 150px; }
+
+  /* ============ Transitions en fondu enchaîné (plus de passage au noir) ============ */
+  .video.playing .scene-hero { animation: crossIn .5s ease calc(var(--hero-start, 3s) - var(--seek-offset, 0s)) both,
+    crossOut .01s linear calc(var(--hero-start, 3s) + var(--hero-dur, 4s) + .5s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .scene-room { animation: crossIn .5s ease calc(var(--scene-start, 7s) - var(--seek-offset, 0s)) both,
+    crossOut .01s linear calc(var(--scene-start, 7s) + var(--scene-dur, 5s) + .5s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .scene-highlight { animation: crossIn .5s ease calc(var(--highlight-start, 22s) - var(--seek-offset, 0s)) both,
+    crossOut .01s linear calc(var(--highlight-start, 22s) + var(--highlight-dur, 5s) + .5s - var(--seek-offset, 0s)) forwards; }
+  .video.playing .scene-outro { animation: crossIn .5s ease calc(var(--outro-start, 27s) - var(--seek-offset, 0s)) both; }
+  @keyframes crossIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes crossOut { to { opacity: 0; } }
+  /* Sous-titres pendant l'ouverture : sous le logo */
+  .intro2-logo { top: 14%; width: 66px; }
+  .intro2-text { top: 42%; }
+  .captions.cap-intro { top: 27%; }
+  .fmt-45 .captions.cap-intro { top: 26%; }
+  .fmt-169 .intro2-logo { top: 5%; width: 56px; }
+  .fmt-169 .intro2-text { top: 33%; }
+  .fmt-169 .captions.cap-intro { top: 25%; }
+  .fmt-169 .intro2-text { top: 38%; }
+  .fmt-169 .contact-block { flex-wrap: wrap; max-width: 380px; }
+
+  /* Divers */
+  .post-text { width:100%; min-height:180px; font-size:12px; line-height:1.45; padding:10px; border:1px solid var(--sh-border); border-radius:10px; font-family:inherit; resize:vertical; }
+  .team-music-title { font-size:11px; font-weight:800; color:var(--sh-teal-dark); text-transform:uppercase; letter-spacing:1px; margin-top:14px; }
+
   /* ============ RECORDING MODE — hide studio UI, show only phone preview ============ */
   body.recording-mode {
     background: #000 !important;
@@ -2106,6 +2251,7 @@
           <button class="btn btn-secondary" id="export-profile-btn" title="Télécharger mon profil pour l'utiliser sur un autre ordinateur">📤 Exporter mon profil</button>
           <button class="btn btn-secondary" id="import-profile-btn" title="Recharger un profil exporté">📥 Importer</button>
           <input type="file" id="import-profile-file" accept=".json" style="display:none;">
+          <button class="btn btn-secondary" id="backup-btn" title="Tout sauvegarder dans un fichier : profil, vidéo en cours, photos HD, vidéos, voix-off, musiques">💾 Sauvegarde complète</button>
         </div>
       </div>
     </div>
@@ -2125,17 +2271,68 @@
       </div>
     </div>
 
+
+    <!-- Section: Modèle & format -->
+    <div class="section" data-section="template">
+      <div class="section-header" data-toggle>
+        <div class="section-icon yellow">🎯</div>
+        <div class="section-title">Modèle, format &amp; durée</div>
+        <div class="section-toggle">▼</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>Type de vidéo</label>
+          <select data-bind="property.template">
+            <option value="nouveaute">🆕 Nouveauté</option>
+            <option value="baisse">📉 Baisse de prix</option>
+            <option value="portes">🚪 Portes ouvertes</option>
+            <option value="vendu">✅ Vendu</option>
+            <option value="recrutement">🤝 Recrutement</option>
+            <option value="classique">Sans bandeau</option>
+          </select>
+        </div>
+        <div class="field tpl-only" data-tpl="baisse"><label>Ancien prix</label><input type="text" data-bind="property.oldPrice" placeholder="ex: 940 000 €"></div>
+        <div class="field tpl-only" data-tpl="portes"><label>Date et horaires</label><input type="text" data-bind="property.eventDate" placeholder="ex: Samedi 15 nov. · 10h – 17h"></div>
+        <div class="field"><label>Phrase d'ouverture (1re seconde, facultatif)</label><input type="text" data-bind="property.introHook" maxlength="40" placeholder="Laisser vide = automatique selon le modèle">
+          <div class="field-hint">C'est ce qui retient le spectateur : prix, nouveauté, date… Laisser vide pour la version automatique.</div></div>
+        <div class="field-row">
+          <div class="field"><label>Ouverture</label>
+            <select data-bind="property.introStyle">
+              <option value="photo">Accroche sur la photo (recommandé)</option>
+              <option value="logo">Logo plein écran (classique)</option>
+            </select></div>
+          <div class="field"><label>Durée</label>
+            <select data-bind="property.targetDur">
+              <option value="">Libre (selon les plans)</option>
+              <option value="15">15 s (Reels court)</option>
+              <option value="20">20 s</option>
+              <option value="30">30 s</option>
+            </select></div>
+        </div>
+        <div class="field"><label>Format</label>
+          <select data-bind="property.format">
+            <option value="916">9:16 · Reels, Stories, TikTok (recommandé)</option>
+            <option value="45">4:5 · Fil Facebook / Instagram</option>
+            <option value="169">16:9 · YouTube, site internet</option>
+          </select></div>
+        <div class="field-row">
+          <div class="field"><label>Phrase de fin (facultatif)</label><input type="text" data-bind="property.outroHook" maxlength="60" placeholder="Sinon : celle de votre profil"></div>
+          <div class="field"><label>Bouton de fin</label><input type="text" data-bind="property.ctaText" maxlength="24" placeholder="Automatique"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Section: Property -->
     <div class="section" data-section="property">
       <div class="section-header" data-toggle>
         <div class="section-icon red">🏠</div>
-        <div class="section-title">Le bien</div>
+        <div class="section-title" id="property-title">Le bien</div>
         <div class="section-toggle">▼</div>
       </div>
       <div class="section-body">
         <div class="field-row">
           <div class="field">
-            <label>Ville</label>
+            <label data-lbl="city">Ville</label>
             <input type="text" data-bind="property.city" placeholder="ex: Cabestany">
           </div>
           <div class="field">
@@ -2149,11 +2346,11 @@
             <input type="text" data-bind="property.prefix" placeholder="LUXUEUSE">
           </div>
           <div class="field">
-            <label>Type</label>
+            <label data-lbl="type">Type</label>
             <input type="text" data-bind="property.type" placeholder="VILLA">
           </div>
           <div class="field">
-            <label>Complément</label>
+            <label data-lbl="typeSub">Complément</label>
             <input type="text" data-bind="property.typeSub" placeholder="VUE PISCINE">
           </div>
         </div>
@@ -2184,6 +2381,36 @@
               <option value="G">G</option>
             </select>
           </div>
+        </div>
+
+        <div class="legal-box" id="legal-fields">
+          <div class="legal-title">⚖ Mentions obligatoires (annonce de vente)</div>
+          <div class="field-row-3">
+            <div class="field"><label>GES (climat)</label>
+              <select data-bind="property.ges">
+                <option value="">—</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option>
+              </select></div>
+            <div class="field"><label>Énergie min €/an</label><input type="text" inputmode="numeric" data-bind="property.energyMin" placeholder="1 200"></div>
+            <div class="field"><label>Énergie max €/an</label><input type="text" inputmode="numeric" data-bind="property.energyMax" placeholder="1 700"></div>
+          </div>
+          <div class="field"><label>Année de référence des prix de l'énergie (voir le DPE)</label><input type="text" data-bind="property.energyYear" placeholder="ex: 2021 ou 2023"></div>
+          <div class="field-row-3">
+            <div class="field"><label>Honoraires</label>
+              <select data-bind="property.feesMode">
+                <option value="acquereur">À la charge de l'acquéreur</option>
+                <option value="vendeur">À la charge du vendeur</option>
+              </select></div>
+            <div class="field"><label>% TTC</label><input type="text" inputmode="decimal" data-bind="property.feesPct" placeholder="5"></div>
+            <div class="field"><label>Prix hors honoraires</label><input type="text" data-bind="property.priceNet" placeholder="calculé auto"></div>
+          </div>
+          <div class="field-row-3">
+            <div class="field"><label>Copropriété</label>
+              <select data-bind="property.copro"><option value="">Non</option><option value="oui">Oui</option></select></div>
+            <div class="field"><label>Nb de lots</label><input type="text" data-bind="property.coproLots" placeholder="24"></div>
+            <div class="field"><label>Charges €/an</label><input type="text" data-bind="property.coproCharges" placeholder="1 800"></div>
+          </div>
+          <div class="field"><label>Procédure en cours (copropriété)</label><input type="text" data-bind="property.coproProc" placeholder="Aucune"></div>
+          <div class="field-hint">Le prix « honoraires inclus », DPE/GES, dépenses d'énergie et la mention F/G sont affichés dans la vidéo. Le reste (copropriété, Géorisques) est ajouté au <strong>texte de publication</strong> généré dans « Exporter ma vidéo ».</div>
         </div>
         <div style="font-weight:800;color:var(--sh-teal-dark);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:8px;">3 points forts (puces de la carte)</div>
         <div class="field">
@@ -2293,14 +2520,43 @@
           </div>
         </label>
         <div class="music-library" id="music-library"></div>
+        <div id="team-music-wrap" style="display:none;">
+          <div class="team-music-title">🎧 Bibliothèque de l'équipe (libre de droits)</div>
+          <div class="music-library" id="team-music"></div>
+        </div>
         <div class="volume-row">
           <label>Volume</label>
           <input type="range" id="music-volume" min="0" max="100" step="1" value="80">
           <div class="volume-value" id="volume-display">80 %</div>
         </div>
         <div class="help-bubble" style="background:#FEF3C7;border-color:#F59E0B;color:#92400E;">
-          ✅ La musique choisie est <strong>intégrée automatiquement</strong> au fichier MP4 (aucune case à cocher).
+          ✅ La musique choisie est <strong>intégrée automatiquement</strong> au fichier MP4, et <strong>conservée</strong> d'une session à l'autre. Musiques libres de droits conseillées : Pixabay Music, YouTube Audio Library.
         </div>
+      </div>
+    </div>
+
+
+    <!-- Section: Voix-off & sous-titres -->
+    <div class="section" data-section="voice">
+      <div class="section-header" data-toggle>
+        <div class="section-icon red">🎙</div>
+        <div class="section-title">Voix-off &amp; sous-titres</div>
+        <div class="section-toggle">▼</div>
+      </div>
+      <div class="section-body">
+        <div class="help-bubble">85 % des vidéos sont regardées <strong>sans le son</strong> : vos paroles s'affichent en sous-titres. Cliquez sur Enregistrer, la vidéo défile, commentez-la à voix haute (casque conseillé).</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn btn-primary" id="voice-rec-btn" type="button">● Enregistrer ma voix-off</button>
+          <label class="btn btn-secondary" style="cursor:pointer;">📁 Importer un audio<input type="file" id="voice-file" accept="audio/*" style="display:none;"></label>
+          <button class="btn btn-secondary" id="voice-del-btn" type="button" style="display:none;">× Supprimer</button>
+        </div>
+        <div id="voice-status" style="font-size:12px;margin-top:8px;color:var(--sh-text-muted);">Aucune voix-off.</div>
+        <div class="field" style="margin-top:10px;flex-direction:row;align-items:center;gap:8px;display:flex;">
+          <input type="checkbox" id="captions-on" style="width:auto;"> <label for="captions-on" style="margin:0;">Afficher les sous-titres dans la vidéo</label>
+        </div>
+        <div id="captions-editor"></div>
+        <button class="btn btn-secondary" id="cap-add-btn" type="button" style="margin-top:4px;">+ Ajouter un sous-titre</button>
+        <div class="field-hint" style="margin-top:6px;">Chaque ligne = moment d'apparition (secondes) + texte. Les sous-titres sont créés automatiquement pendant l'enregistrement (Chrome), corrigez-les si besoin.</div>
       </div>
     </div>
 
@@ -2387,6 +2643,9 @@
           <li>Nommez la vidéo : le fichier MP4 est enregistré ✓</li>
           <li>Publiez-la en <strong>Reel</strong> (Instagram / Facebook) avec l'option <strong>« Importer en HD »</strong> activée dans l'application</li>
         </ol>
+        <div style="font-weight:800;color:var(--sh-teal-dark);font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:16px;">📝 Texte de publication (avec mentions légales)</div>
+        <textarea class="post-text" id="post-text" readonly></textarea>
+        <button class="btn btn-secondary" id="post-copy-btn" type="button" style="width:100%;margin-top:6px;">📋 Copier le texte</button>
         <div class="help-bubble" style="margin-top:14px;">
           💡 <strong>Mac :</strong> même fonctionnement que PC. Si la boîte de dialogue "Enregistrer sous" n'apparaît pas, activez <em>Paramètres Chrome → Téléchargements → Demander où enregistrer</em>.
         </div>
@@ -2412,6 +2671,18 @@
             <div class="intro-wipe"></div>
           </div>
 
+          <!-- SCENE 1 bis : OUVERTURE ACCROCHE SUR PHOTO -->
+          <div class="scene scene-intro2">
+            <img class="scene-bg intro2-bg" id="bg-intro2" alt="">
+            <div class="intro2-shade"></div>
+            <img class="intro2-logo" id="intro2-logo" alt="Square Habitat">
+            <div class="intro2-text">
+              <div class="intro2-badge" data-render="i2-badge">NOUVEAUTÉ</div>
+              <div class="intro2-title" data-render="i2-title">VILLA</div>
+              <div class="intro2-sub" data-render="i2-sub">CABESTANY</div>
+              <div><div class="intro2-line" data-render="i2-line">895 000 €</div></div>
+            </div>
+          </div>
           <!-- SCENE 2: HERO (rich info card) -->
           <div class="scene scene-hero">
             <div class="hero-photo-wrap">
@@ -2422,6 +2693,8 @@
               <div class="hero-dots tl"></div>
               <div class="hero-dots bl-photo"></div>
               <div class="hero-location-chip" data-render="hero-city">CABESTANY</div>
+              <div class="hero-event" data-render="hero-event"></div>
+              <div class="sold-stamp">VENDU</div>
             </div>
             <div class="hero-info-panel">
               <div class="hero-bullets">
@@ -2429,6 +2702,7 @@
                 <div class="hero-bullet" data-render="hero-h2">ARCHITECTURE</div>
                 <div class="hero-bullet" data-render="hero-h3">PISCINE</div>
               </div>
+              <div class="hero-legal" id="hero-legal"></div>
               <div class="hero-title-block">
                 <div class="hero-prefix" data-render="hero-prefix">LUXUEUSE</div>
                 <div class="hero-title-main" data-render="hero-title-main">VILLA</div>
@@ -2441,8 +2715,12 @@
                   <span class="dpe-letter dpe-empty" id="dpe-letter">D</span>
                   <span class="dpe-label">DPE</span>
                 </div>
+                <div class="dpe-badge ges-badge hidden" id="ges-badge">
+                  <span class="ges-letter" id="ges-letter">B</span>
+                  <span class="dpe-label">GES</span>
+                </div>
                 <div class="hero-surface-tag" data-render="hero-surface">180 m²</div>
-                <div class="hero-price-tag" data-render="hero-price">895 000 €</div>
+                <div class="hero-price-tag"><span class="hero-oldprice" data-render="hero-oldprice"></span><span data-render="hero-price">895 000 €</span></div>
               </div>
             </div>
           </div>
@@ -2482,11 +2760,12 @@ CHAUFFÉE</div>
                 </div>
               </div>
             </div>
-            <div class="cta-pulse">APPELEZ-MOI</div>
+            <div class="cta-pulse" data-render="cta">APPELEZ-MOI</div>
             <div class="agency-line">SQUARE HABITAT · CRÉDIT AGRICOLE</div>
           </div>
 
           <div class="beat-pulse"></div>
+          <div class="captions" id="captions"><span id="captions-text"></span></div>
         </div>
         <div class="safe-guides" aria-hidden="true">
           <div class="sz top">Masqué par Instagram / Facebook</div>
@@ -2513,6 +2792,7 @@ CHAUFFÉE</div>
     </div>
 
     <audio id="preview-audio" preload="auto" style="display:none;"></audio>
+    <audio id="voice-audio" preload="auto" style="display:none;"></audio>
   </div>
 </main>
 
@@ -4479,6 +4759,11 @@ const DEFAULT_PROPERTY = {
   surface: '180 m²',
   price: '895 000 €',
   dpe: '',
+  ges: '', energyMin: '', energyMax: '', energyYear: '2021',
+  feesMode: 'acquereur', feesPct: '', priceNet: '',
+  copro: '', coproLots: '', coproCharges: '', coproProc: '',
+  template: 'nouveaute', oldPrice: '', eventDate: '', introHook: '',
+  introStyle: 'photo', targetDur: '', format: '916', outroHook: '', ctaText: '',
   highlight1: 'PISCINE PRIVÉE',
   highlight2: 'ARCHITECTURE *****',
   highlight3: 'JARDIN 800 M²',
@@ -5190,7 +5475,7 @@ function saveState() {
         if (!liveIds.has(String(id))) return;
         const p = state.perNeg[id];
         // Strip blob-only media (videos) since blob URLs can't be persisted
-        const stripBlob = (m) => { if (!(m && m.dataUrl)) return null; const { _measuring, ...rest } = m; return rest; };
+        const stripBlob = (m) => { if (m == null || typeof m !== 'object') return m; if (!(m.dataUrl || m.vidId)) return null; const { _measuring, blobUrl, ...rest } = m; return { ...rest, blobUrl: null }; };
         const cleanedTexts = JSON.parse(JSON.stringify(p.texts));
         if (Array.isArray(cleanedTexts.rooms)) {
           cleanedTexts.rooms = cleanedTexts.rooms.map(r => ({ ...r, media: stripBlob(r.media) }));
@@ -5296,11 +5581,13 @@ function getInitials(name) {
 // Compute timing — durations are per-scene based on media (photo/video) + cap
 // Returns starts/durations and computed total length (variable!)
 function computeTiming(rooms) {
-  const intro = 3;
+  const ctx = state.perNeg[state.selectedId];
+  const intro = (ctx?.property?.introStyle === 'logo') ? 3 : 2.5;
   const hero = 4;
   const heroStart = intro;
-  const bodyStart = intro + hero; // 7
-  const ctx = state.perNeg[state.selectedId];
+  const bodyStart = intro + hero;
+  const target = parseFloat(ctx?.property?.targetDur) || 0;
+  if (target) return computeTargetTiming(ctx, rooms, intro, target);
 
   // Compute hero scene duration (uses heroSpeed + heroMaxDur)
   const heroMedia = ctx?.media?.hero;
@@ -5329,12 +5616,44 @@ function computeTiming(rooms) {
   const outroStart = highlightStart + highlightDur;
   const outro = 8;
   const total = outroStart + outro;
+  void bodyStart;
 
   return {
     intro, heroStart, heroDur, bodyStart, realBodyStart,
     roomStarts, roomDurations,
     highlightStart, highlightDur, outroStart, outro, total,
   };
+}
+
+// 8. Durée cible : on répartit le temps disponible entre les scènes
+function computeTargetTiming(ctx, rooms, intro, target) {
+  const outro = target <= 15 ? 5 : target <= 20 ? 6 : 7;
+  const vidLen = (m, speed, ts, te) => {
+    if (!(m && m.type && m.type.startsWith('video/') && m.duration)) return null;
+    const a = Math.max(0, parseFloat(ts) || 0);
+    const b = (te != null && te !== '') ? Math.min(parseFloat(te), m.duration) : m.duration;
+    return Math.max(1, (b - a) / (parseFloat(speed) || 1));
+  };
+  const scenes = [
+    vidLen(ctx.media.hero, ctx.media.heroSpeed, ctx.media.heroTrimStart),
+    ...rooms.map(r => vidLen(r.media, r.speed, r.trimStart, r.trimEnd)),
+    vidLen(ctx.media.highlight, ctx.media.highlightSpeed, ctx.media.highlightTrimStart),
+  ];
+  const avail = Math.max(scenes.length * 1.5, target - intro - outro);
+  let share = avail / scenes.length;
+  let durs = scenes.map(v => v == null ? share : Math.min(v, share));
+  const left = avail - durs.reduce((a, b) => a + b, 0);
+  const photos = scenes.filter(v => v == null).length;
+  if (left > 0.01 && photos) durs = durs.map((d, i) => scenes[i] == null ? d + left / photos : d);
+  durs = durs.map(d => Math.max(1.5, Math.round(d * 10) / 10));
+  const heroStart = intro, heroDur = durs[0];
+  let cur = heroStart + heroDur;
+  const roomDurations = durs.slice(1, 1 + rooms.length);
+  const roomStarts = roomDurations.map(d => { const s0 = cur; cur += d; return s0; });
+  const highlightStart = cur, highlightDur = durs[durs.length - 1];
+  const outroStart = highlightStart + highlightDur;
+  return { intro, heroStart, heroDur, bodyStart: heroStart + heroDur, realBodyStart: heroStart + heroDur,
+    roomStarts, roomDurations, highlightStart, highlightDur, outroStart, outro, total: outroStart + outro };
 }
 
 function render() {
@@ -5369,6 +5688,7 @@ function render() {
   setText('hero-description', ctx.property.description || '');
   setText('hero-surface', ctx.property.surface || '');
   setText('hero-price', ctx.property.price || '');
+  renderTemplateLayer(neg, ctx);
   setText('hero-h1', (ctx.property.highlight1 || '').toUpperCase());
   setText('hero-h2', (ctx.property.highlight2 || '').toUpperCase());
   setText('hero-h3', (ctx.property.highlight3 || '').toUpperCase());
@@ -5392,7 +5712,7 @@ function render() {
   // Outro
   setText('neg-name', (neg.name || 'VOTRE NOM').toUpperCase());
   setText('neg-role', (neg.role || '').toUpperCase());
-  setText('neg-hook', neg.hook || '');
+  setText('neg-hook', outroHookFor(neg, ctx));
   setText('neg-phone', neg.phone || '—');
   setText('neg-email', neg.email || '—');
   setText('neg-initials', getInitials(neg.name));
@@ -5432,6 +5752,10 @@ function render() {
   video.style.setProperty('--highlight-start', T.highlightStart + 's');
   video.style.setProperty('--highlight-dur', T.highlightDur + 's');
   video.style.setProperty('--outro-start', T.outroStart + 's');
+  video.style.setProperty('--intro-dur', T.intro + 's');
+  renderCaptionsEditor();
+  updatePostText();
+  requestAnimationFrame(() => fitTexts(document.getElementById('video')));
   // Update timecode display
   const totalStr = `00:${String(Math.round(T.total)).padStart(2,'0')}`;
   const tc = document.getElementById('timecode');
@@ -5497,6 +5821,7 @@ function renderRoomScenes() {
     `;
     container.appendChild(scene);
   });
+  requestAnimationFrame(() => fitTexts(container));
 }
 
 function formatStat(value) {
@@ -5799,9 +6124,11 @@ async function addMusicFiles(fileList) {
       id, name: file.name.replace(/\.[^.]+$/, ''),
       blobUrl, duration, size: file.size,
     });
+    try { await hdPut('mus_' + id, file); } catch (e) {}
     if (!musicState.activeId) musicState.activeId = id;
   }
   renderMusicLibrary();
+  saveMusicMeta();
   showToast(`✓ ${files.length} musique(s) ajoutée(s)`);
 }
 
@@ -5819,6 +6146,8 @@ function setActiveMusic(id) {
   musicState.activeId = id;
   musicState.activeType = 'file';
   musicState.activePresetId = null;
+  setTimeout(saveMusicMeta, 0);
+  renderTeamMusic();
   renderMusicLibrary();
   renderPresetGrid();
   updateActiveMusicDisplay();
@@ -5828,6 +6157,8 @@ function setActivePreset(id) {
   musicState.activePresetId = id;
   musicState.activeType = 'preset';
   musicState.activeId = null;
+  setTimeout(saveMusicMeta, 0);
+  renderTeamMusic();
   renderMusicLibrary();
   renderPresetGrid();
   updateActiveMusicDisplay();
@@ -5890,6 +6221,8 @@ function removeMusic(id) {
   if (idx < 0) return;
   URL.revokeObjectURL(musicState.library[idx].blobUrl);
   musicState.library.splice(idx, 1);
+  hdDelete('mus_' + id).catch(() => {});
+  setTimeout(saveMusicMeta, 0);
   if (musicState.activeId === id) {
     musicState.activeId = musicState.library[0]?.id || null;
   }
@@ -5908,13 +6241,13 @@ function renderMusicLibrary() {
   const lib = document.getElementById('music-library');
   const count = document.getElementById('music-count');
   if (!lib) return;
-  count.textContent = `(${musicState.library.length})`;
-  if (!musicState.library.length) {
+  count.textContent = `(${musicState.library.filter(m => !m.team).length})`;
+  if (!musicState.library.filter(m => !m.team).length) {
     lib.innerHTML = '<div style="text-align:center;padding:14px;font-size:12px;color:var(--sh-text-muted);">Aucune musique chargée. Ajoutez-en au-dessus.</div>';
     return;
   }
   lib.innerHTML = '';
-  musicState.library.forEach(m => {
+  musicState.library.filter(m => !m.team).forEach(m => {
     const isActive = m.id === musicState.activeId;
     const item = document.createElement('div');
     item.className = 'music-item' + (isActive ? ' active' : '');
@@ -5953,6 +6286,19 @@ function updateActiveMusicDisplay() {
 }
 
 function startMusic(totalDur, seekOffset = 0) {
+  startVoice(seekOffset);
+  if (voiceState.recording) { stopMusicOnly(); return; }
+  const _vol = musicState.volume;
+  const _v = getCtx().media.voice;
+  if (hasVoice() && (!_v.duration || seekOffset < _v.duration)) musicState.volume = _vol * VOICE_MUSIC_DUCK;
+  try { startMusicInner(totalDur, seekOffset); } finally { musicState.volume = _vol; }
+}
+function stopMusicOnly() {
+  const audio = document.getElementById('preview-audio');
+  if (audio) audio.pause();
+  musicSynth.stop();
+}
+function startMusicInner(totalDur, seekOffset = 0) {
   const audio = document.getElementById('preview-audio');
   if (!totalDur) {
     const T = computeTiming(getCtx().texts.rooms);
@@ -5972,13 +6318,16 @@ function startMusic(totalDur, seekOffset = 0) {
   if (!audio) return;
   if (!active) { audio.pause(); audio.removeAttribute('src'); musicSynth.stop(); return; }
   musicSynth.stop();
+  if (!active.blobUrl) { ensureTeamTrack(active).then(u => { if (u && playing) startMusic(totalDur, seekOffset + 0.3); }); return; }
   if (audio.src !== active.blobUrl) audio.src = active.blobUrl;
   audio.currentTime = Math.max(0, seekOffset);
-  audio.volume = musicState.volume;
+  audio.volume = Math.min(1, musicState.volume);
   audio.play().catch(() => {});
 }
 
 function stopMusic() {
+  const vo = document.getElementById('voice-audio');
+  if (vo) vo.pause();
   const audio = document.getElementById('preview-audio');
   if (audio) { audio.pause(); try { audio.currentTime = 0; } catch(e) {} }
   musicSynth.stop();
@@ -6147,7 +6496,7 @@ async function confirmSaveVideo() {
 
   // 2) Trigger real "Save As" dialog (Bureau / Documents…) — uses fresh user activation from this click
   const slug = rawName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').slice(0, 60) || 'video';
-  const filename = `${slug}.mp4`;
+  const filename = `${slug}${({ '45': '-4x5', '169': '-16x9' })[getCtx().property.format] || ''}.mp4`;
   let savedToDisk = false;
   if (window.showSaveFilePicker) {
     try {
@@ -6509,6 +6858,7 @@ function importProfile(file, targetId = null) {
   reader.onload = () => {
     try {
       const data = JSON.parse(reader.result);
+      if (data.type === 'square-habitat-backup-v1') { importBackup(data); return; }
       if (data.type !== 'square-habitat-profile-v1' || !data.negotiator) {
         throw new Error('Format invalide');
       }
@@ -6566,6 +6916,7 @@ function setupBindings() {
 function setupUploads() {
   document.querySelectorAll('.upload').forEach(upload => {
     const target = upload.dataset.target;
+    if (target === 'music-upload') return;
     const input = upload.querySelector('input[type=file]');
     const clearBtn = upload.querySelector('[data-clear]');
 
@@ -6621,10 +6972,15 @@ async function assignFile(target, file) {
   const isVideo = file.type.startsWith('video/');
   let media;
   if (isVideo) {
-    // Don't persist videos (too big), use blob URL only
+    // Vidéo conservée dans IndexedDB (retrouvée après rechargement)
     const blobUrl = URL.createObjectURL(file);
     const duration = await detectVideoDuration(blobUrl);
     media = { type: file.type, blobUrl, dataUrl: null, name: file.name, duration };
+    try {
+      const vidId = 'vd_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+      await hdPut(vidId, file);
+      media.vidId = vidId;
+    } catch (e) { console.warn('Stockage vidéo', e); }
   } else {
     // Aperçu léger (~1080 px) pour l'éditeur + original HD (jusqu'à 3240 px) pour l'export
     const img = await loadImageFile(file);
@@ -6692,12 +7048,13 @@ async function hdGarbageCollect() {
   try {
     const used = new Set();
     Object.values(state.perNeg || {}).forEach(p => {
-      Object.values(p.media || {}).forEach(m => { if (m && m.hdId) used.add(m.hdId); });
-      (p.texts?.rooms || []).forEach(r => { if (r.media && r.media.hdId) used.add(r.media.hdId); });
+      Object.values(p.media || {}).forEach(m => { if (m && m.hdId) used.add(m.hdId); if (m && m.vidId) used.add(m.vidId); });
+      (p.texts?.rooms || []).forEach(r => { if (r.media && r.media.hdId) used.add(r.media.hdId); if (r.media && r.media.vidId) used.add(r.media.vidId); });
     });
     const db = await hdOpenDB();
     const keys = await new Promise((res, rej) => { const tx = db.transaction('hd', 'readonly'); const r = tx.objectStore('hd').getAllKeys(); r.onsuccess = () => res(r.result || []); r.onerror = () => rej(r.error); });
-    const stale = keys.filter(k => !used.has(k));
+    (musicState.library || []).forEach(m => used.add('mus_' + m.id));
+    const stale = keys.filter(k => !used.has(k) && !String(k).startsWith('mus_'));
     if (!stale.length) return;
     await new Promise(res => { const tx = db.transaction('hd', 'readwrite'); stale.forEach(k => tx.objectStore('hd').delete(k)); tx.oncomplete = res; tx.onerror = res; });
   } catch (e) {}
@@ -6791,6 +7148,582 @@ function ensureMediaDims() {
     im.onerror = () => { delete m._measuring; };
     im.src = m.dataUrl;
   });
+}
+
+
+// =====================================================================
+// MODÈLES, OUVERTURE, MENTIONS LÉGALES, FORMATS  (points 1, 4, 6, 7)
+// =====================================================================
+const TEMPLATES = {
+  nouveaute:   { badge: 'NOUVEAUTÉ',       cta: 'APPELEZ-MOI' },
+  baisse:      { badge: 'BAISSE DE PRIX',  cta: 'APPELEZ-MOI' },
+  portes:      { badge: 'PORTES OUVERTES', cta: 'JE RÉSERVE MA VISITE' },
+  vendu:       { badge: 'VENDU',           cta: 'ESTIMATION OFFERTE', hook: 'Votre bien est le prochain ?' },
+  recrutement: { badge: 'ON RECRUTE',      cta: 'POSTULEZ', hook: 'Envie de nous rejoindre ?' },
+  classique:   { badge: '',                cta: 'APPELEZ-MOI' },
+};
+const SALE_TEMPLATES = ['nouveaute', 'baisse', 'portes', 'classique'];
+const tplOf = ctx => TEMPLATES[ctx.property.template] ? ctx.property.template : 'nouveaute';
+
+function outroHookFor(neg, ctx) {
+  if ((ctx.property.outroHook || '').trim()) return ctx.property.outroHook.trim();
+  const t = TEMPLATES[tplOf(ctx)];
+  if (t.hook) return t.hook;
+  return neg.hook || '';
+}
+
+function parseEuro(v) {
+  const n = parseFloat(String(v || '').replace(/[^\d,.]/g, '').replace(/\s/g, '').replace(',', '.'));
+  return isNaN(n) ? null : n;
+}
+function fmtEuro(n) { return Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + ' €'; }
+
+function legalInfo(ctx) {
+  const p = ctx.property;
+  const tpl = tplOf(ctx);
+  const out = { sale: SALE_TEMPLATES.includes(tpl), excess: false, fees: '', energy: '', net: '' };
+  if (!out.sale) return out;
+  out.excess = ['F', 'G'].includes((p.dpe || '').toUpperCase());
+  const price = parseEuro(p.price);
+  const pct = parseFloat(String(p.feesPct || '').replace(',', '.'));
+  if (p.feesMode === 'vendeur') {
+    out.fees = 'Honoraires à la charge du vendeur.';
+  } else if (!isNaN(pct) && pct > 0) {
+    let net = parseEuro(p.priceNet);
+    if (!net && price) net = price / (1 + pct / 100);
+    out.net = net ? fmtEuro(net) : '';
+    out.fees = `Prix honoraires inclus, dont ${String(p.feesPct).replace('.', ',')} % TTC à la charge de l'acquéreur` + (out.net ? ` (${out.net} hors honoraires).` : '.');
+  }
+  const emin = parseEuro(p.energyMin), emax = parseEuro(p.energyMax);
+  if (emin || emax) {
+    out.energy = `Montant estimé des dépenses annuelles d'énergie pour un usage standard : `
+      + (emin && emax ? `entre ${fmtEuro(emin)} et ${fmtEuro(emax)}` : fmtEuro(emin || emax)) + ` par an`
+      + (p.energyYear ? `. Prix moyens des énergies indexés au 1er janvier ${p.energyYear}.` : '.');
+  }
+  return out;
+}
+
+function firstImageMedia(ctx) {
+  const list = [ctx.media.hero, ...(ctx.texts.rooms || []).map(r => r.media), ctx.media.highlight];
+  return list.find(m => m && m.dataUrl && !(m.type || '').startsWith('video/')) || null;
+}
+
+function renderTemplateLayer(neg, ctx) {
+  const p = ctx.property;
+  const tpl = tplOf(ctx);
+  const T = TEMPLATES[tpl];
+  const video = document.getElementById('video');
+  Object.keys(TEMPLATES).forEach(k => video.classList.toggle('tpl-' + k, k === tpl));
+  // Ouverture
+  const photoIntro = p.introStyle !== 'logo';
+  document.querySelector('.scene-intro')?.classList.toggle('off', photoIntro);
+  document.querySelector('.scene-intro2')?.classList.toggle('off', !photoIntro);
+  const logo2 = document.getElementById('intro2-logo');
+  const logo1 = document.getElementById('intro-logo');
+  if (logo2 && logo1 && logo2.src !== logo1.src) logo2.src = logo1.src;
+  const bg = document.getElementById('bg-intro2');
+  const im = firstImageMedia(ctx);
+  if (bg) {
+    if (im) { if (bg.getAttribute('src') !== im.dataUrl) bg.src = im.dataUrl; bg.style.display = ''; if (im.hdId) bg.dataset.hd = im.hdId; else delete bg.dataset.hd; }
+    else { bg.removeAttribute('src'); bg.style.display = 'none'; delete bg.dataset.hd; }
+  }
+  const up = v => (v || '').toUpperCase();
+  let title, sub, line;
+  if (tpl === 'recrutement') {
+    title = up(p.type) || 'NÉGOCIATEUR (H/F)';
+    sub = up(neg.agency ? 'Square Habitat ' + neg.agency : p.city);
+    line = escapeHtml(p.typeSub || '');
+  } else {
+    title = [up(p.type), (p.surface || '').toUpperCase()].filter(Boolean).join(' · ') || 'VOTRE BIEN';
+    sub = up(p.city);
+    if (tpl === 'baisse' && p.oldPrice) line = `<s>${escapeHtml(p.oldPrice)}</s>${escapeHtml(p.price || '')}`;
+    else if (tpl === 'portes') line = escapeHtml(p.eventDate || 'Ce week-end');
+    else if (tpl === 'vendu') line = 'VENDU PAR ' + escapeHtml(up(neg.name ? neg.name.split(' ')[0] : 'SQUARE HABITAT'));
+    else line = escapeHtml(p.price || '');
+  }
+  if ((p.introHook || '').trim()) line = escapeHtml(p.introHook.trim());
+  const set = (k, v, html) => { const el = document.querySelector(`[data-render="${k}"]`); if (el) { if (html) el.innerHTML = v; else el.textContent = v; } };
+  set('i2-badge', T.badge);
+  set('i2-title', title);
+  set('i2-sub', sub);
+  set('i2-line', line, true);
+  // Carte du bien
+  set('hero-oldprice', tpl === 'baisse' ? (p.oldPrice || '') : '');
+  set('hero-event', tpl === 'portes' ? ('Portes ouvertes · ' + (p.eventDate || '')) : '');
+  set('cta', (p.ctaText || '').trim().toUpperCase() || T.cta);
+  // GES
+  const ges = up(p.ges);
+  const gb = document.getElementById('ges-badge'), gl = document.getElementById('ges-letter');
+  if (gb && gl) {
+    if (/^[A-G]$/.test(ges)) { gb.classList.remove('hidden'); gl.className = 'ges-letter ges-' + ges; gl.textContent = ges; }
+    else gb.classList.add('hidden');
+  }
+  // Mentions légales dans la carte
+  const L = legalInfo(ctx);
+  const legal = document.getElementById('hero-legal');
+  if (legal) {
+    const parts = [];
+    if (L.excess) parts.push('<span class="excess">Logement à consommation énergétique excessive</span>');
+    if (L.fees) parts.push(escapeHtml(L.fees));
+    if (L.energy) parts.push(escapeHtml(L.energy));
+    legal.innerHTML = L.sale ? parts.join(' ') : '';
+  }
+  // Libellés du formulaire
+  const rec = tpl === 'recrutement';
+  const lbl = (k, a, b) => { const el = document.querySelector(`[data-lbl="${k}"]`); if (el) el.textContent = rec ? b : a; };
+  lbl('city', 'Ville', 'Ville / agence'); lbl('type', 'Type', 'Poste'); lbl('typeSub', 'Complément', 'Contrat');
+  const pt = document.getElementById('property-title'); if (pt) pt.textContent = rec ? 'Le poste' : 'Le bien';
+  const lf = document.getElementById('legal-fields'); if (lf) lf.style.display = L.sale ? '' : 'none';
+  document.querySelectorAll('.tpl-only').forEach(el => { el.style.display = el.dataset.tpl === tpl ? '' : 'none'; });
+  // Format
+  const f = ['916', '45', '169'].includes(p.format) ? p.format : '916';
+  const screen = document.querySelector('.phone .screen'), phone = document.getElementById('phone');
+  ['916', '45', '169'].forEach(k => { screen?.classList.toggle('fmt-' + k, k === f); phone?.classList.toggle('fmt-' + k, k === f); video.classList.toggle('fmt-' + k, k === f); });
+  const sb = document.getElementById('safe-btn'); if (sb) sb.style.display = f === '916' ? '' : 'none';
+}
+
+// =====================================================================
+// 3. AJUSTEMENT AUTOMATIQUE DES TEXTES
+// =====================================================================
+const FIT_RULES = [
+  ['.intro2-title', { nowrap: true }], ['.intro2-sub', { nowrap: true }], ['.intro2-line', { nowrap: true }], ['.intro2-badge', { nowrap: true }],
+  ['.hero-location-chip', { nowrap: true, maxW: 0.62 }], ['.hero-event', { nowrap: true, maxWP: 0.86 }],
+  ['.hero-prefix', { nowrap: true }], ['.hero-title-main', { lines: 2, wide: true }], ['.hero-title-sub', { lines: 2, wide: true }],
+  ['.hero-description', { lines: 3 }], ['.hero-bullet', { lines: 2 }],
+  ['.hero-bottom-row', { nowrap: true, row: true }],
+  ['.subtitle-eyebrow', { nowrap: true }], ['.subtitle-main', { pre: true }], ['.subtitle-stat', { nowrap: true }],
+  ['.highlight-eyebrow', { nowrap: true }], ['.highlight-title', { pre: true }],
+  ['.negotiator-name', { nowrap: true }], ['.negotiator-role', { nowrap: true }], ['.hook-phrase', { lines: 2 }],
+  ['.contact-row', { nowrap: true }], ['.cta-pulse', { nowrap: true, maxW: 0.9 }], ['.agency-line', { nowrap: true }],
+  ['.captions span', { lines: 3, inline: true }],
+];
+function fitOne(el, rule) {
+  if (!el || !el.getClientRects().length) return;
+  el.style.fontSize = '';
+  if (rule.row) el.querySelectorAll('*').forEach(c => c.style.fontSize = '');
+  const base = parseFloat(getComputedStyle(el).fontSize) || 12;
+  if (rule.nowrap) el.style.whiteSpace = 'nowrap';
+  if (rule.pre) el.style.whiteSpace = 'pre';
+  const fits = () => {
+    if (rule.lines) {
+      const lh = parseFloat(getComputedStyle(el).lineHeight) || parseFloat(getComputedStyle(el).fontSize) * 1.2;
+      if (rule.inline) return el.getClientRects().length <= rule.lines;
+      return el.scrollHeight <= lh * rule.lines + 2 && (!rule.wide || el.scrollWidth <= el.clientWidth + 1);
+    }
+    const scr = el.closest('.screen') || el.parentElement;
+    if (rule.maxWP) return el.offsetWidth <= el.parentElement.clientWidth * rule.maxWP + 1;
+    if (rule.maxW) return el.offsetWidth <= scr.clientWidth * rule.maxW + 1 && el.scrollWidth <= el.clientWidth + 1;
+    if (rule.row) return el.scrollWidth <= el.clientWidth + 1;
+    const parentW = el.parentElement.clientWidth - parseFloat(getComputedStyle(el.parentElement).paddingLeft) - parseFloat(getComputedStyle(el.parentElement).paddingRight);
+    const w = Math.max(el.scrollWidth, el.offsetWidth);
+    return el.scrollWidth <= el.clientWidth + 1 && w <= parentW + 1;
+  };
+  let k = 1;
+  while (!fits() && k > 0.42) {
+    k -= 0.05;
+    if (rule.row) el.querySelectorAll('.hero-surface-tag, .hero-price-tag, .dpe-badge, .dpe-letter, .ges-letter, .hero-oldprice, .dpe-label').forEach(c => {
+      c.style.fontSize = ''; const b = parseFloat(getComputedStyle(c).fontSize); c.style.fontSize = (b * k).toFixed(2) + 'px';
+    });
+    else el.style.fontSize = (base * k).toFixed(2) + 'px';
+  }
+}
+function fitTexts(root) {
+  if (!root) return;
+  FIT_RULES.forEach(([sel, rule]) => root.querySelectorAll(sel).forEach(el => fitOne(el, rule)));
+  // Puces : alignées sous la ligne prix/mentions
+  const panel = root.querySelector('.hero-info-panel');
+  const tb = panel && panel.querySelector('.hero-title-block');
+  const bl = panel && panel.querySelector('.hero-bullets');
+  if (tb && bl && !root.classList.contains('fmt-169')) bl.style.top = (tb.offsetTop + 4) + 'px';
+  else if (bl) bl.style.top = '';
+}
+
+// =====================================================================
+// 5. VOIX-OFF & SOUS-TITRES
+// =====================================================================
+const VOICE_MUSIC_DUCK = 0.3;
+const voiceState = { recording: false, rec: null, stream: null, sr: null, segs: [], t0: 0, timer: null };
+function hasVoice() { const v = getCtx().media.voice; return !!(v && v.blobUrl); }
+function startVoice(seek) {
+  const vo = document.getElementById('voice-audio');
+  if (!vo) return;
+  const v = getCtx().media.voice;
+  if (!v || !v.blobUrl || voiceState.recording) { vo.pause(); return; }
+  if (vo.src !== v.blobUrl) vo.src = v.blobUrl;
+  try { vo.currentTime = Math.max(0, seek || 0); } catch (e) {}
+  vo.volume = 1;
+  vo.play().catch(() => {});
+}
+function setCaptionAt(t) {
+  const span = document.getElementById('captions-text');
+  if (!span) return;
+  const ctx = state.perNeg[state.selectedId];
+  const caps = (ctx?.texts?.captions || []).filter(c => (c.text || '').trim()).slice().sort((a, b) => a.start - b.start);
+  let txt = '';
+  let Tm = null;
+  try { Tm = computeTiming(ctx.texts.rooms); } catch (e) {}
+  const box = document.getElementById('captions');
+  if (box && Tm) box.classList.toggle('cap-intro', t < Tm.intro && ctx.property.introStyle !== 'logo');
+  if (ctx?.texts?.captionsOn && t >= 0 && !(Tm && t >= Tm.outroStart + 0.3)) {
+    for (let i = 0; i < caps.length; i++) {
+      const c = caps[i], next = caps[i + 1];
+      const end = Math.min(c.end != null ? c.end + 0.25 : c.start + 3, next ? next.start : Infinity, c.start + 4);
+      if (t >= c.start && t < end) { txt = c.text; break; }
+    }
+  }
+  if (span.textContent !== txt) {
+    span.textContent = txt;
+    if (txt) fitOne(span, { lines: 3, inline: true });
+  }
+}
+function splitSegments(segs) {
+  const out = [];
+  segs.forEach(sg => {
+    const words = sg.text.split(/\s+/).filter(Boolean);
+    if (!words.length) return;
+    const chunks = [];
+    for (let i = 0; i < words.length; i += 6) chunks.push(words.slice(i, i + 6).join(' '));
+    const dur = Math.max(0.8, sg.end - sg.start);
+    const total = chunks.reduce((a, c) => a + c.length, 0);
+    let t = sg.start;
+    chunks.forEach(c => { const d = dur * c.length / total; out.push({ start: Math.round(t * 10) / 10, end: Math.round((t + d) * 10) / 10, text: c.charAt(0).toUpperCase() + c.slice(1) }); t += d; });
+  });
+  return out;
+}
+async function startVoiceRecording() {
+  if (voiceState.recording) return stopVoiceRecording();
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } }); }
+  catch (e) { showToast('Micro refusé ou introuvable', 'error', 4000); return; }
+  const mime = ['audio/webm;codecs=opus', 'audio/mp4', 'audio/webm'].find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)) || '';
+  const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+  const chunks = [];
+  rec.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+  rec.onstop = async () => {
+    stream.getTracks().forEach(t => t.stop());
+    const blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
+    await saveVoiceBlob(blob, 'Voix-off enregistrée', (performance.now() - voiceState.t0) / 1000);
+    const caps = splitSegments(voiceState.segs);
+    if (caps.length) { getCtx().texts.captions = caps; getCtx().texts.captionsOn = true; }
+    saveState(); render();
+    showToast(caps.length ? `✓ Voix-off enregistrée · ${caps.length} sous-titres créés` : '✓ Voix-off enregistrée (ajoutez vos sous-titres)', 'success', 4000);
+  };
+  voiceState.segs = [];
+  const SRc = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SRc) {
+    try {
+      const sr = new SRc();
+      sr.lang = 'fr-FR'; sr.continuous = true; sr.interimResults = true;
+      let curStart = null;
+      sr.onresult = e => {
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+          const r = e.results[i];
+          const t = (performance.now() - voiceState.t0) / 1000;
+          if (curStart == null) curStart = Math.max(0, t - 0.7);
+          if (r.isFinal) { voiceState.segs.push({ start: curStart, end: t, text: r[0].transcript.trim() }); curStart = null; }
+        }
+      };
+      sr.onend = () => { if (voiceState.recording) { try { sr.start(); } catch (e) {} } };
+      voiceState.sr = sr;
+    } catch (e) { voiceState.sr = null; }
+  }
+  voiceState.rec = rec; voiceState.stream = stream; voiceState.recording = true;
+  document.getElementById('voice-rec-btn').textContent = '■ Arrêter l\'enregistrement';
+  document.getElementById('voice-status').innerHTML = '<span class="rec-live">● Enregistrement…</span> parlez en suivant la vidéo.';
+  if (playing) stopPlayKeepRec();
+  restartScenes();
+  const T = computeTiming(getCtx().texts.rooms);
+  voiceState.t0 = performance.now();
+  rec.start(250);
+  try { voiceState.sr && voiceState.sr.start(); } catch (e) {}
+  play(0);
+  voiceState.timer = setTimeout(stopVoiceRecording, T.total * 1000 + 300);
+}
+function stopPlayKeepRec() { const r = voiceState.recording; voiceState.recording = false; stopPlay(); voiceState.recording = r; }
+function stopVoiceRecording() {
+  if (!voiceState.recording) return;
+  voiceState.recording = false;
+  clearTimeout(voiceState.timer);
+  try { voiceState.sr && voiceState.sr.stop(); } catch (e) {}
+  try { voiceState.rec && voiceState.rec.state !== 'inactive' && voiceState.rec.stop(); } catch (e) {}
+  document.getElementById('voice-rec-btn').textContent = '● Enregistrer ma voix-off';
+  if (playing) stopPlay();
+}
+async function saveVoiceBlob(blob, name, fallbackDur) {
+  const ctx = getCtx();
+  const id = 'vo_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  try { await hdPut(id, blob); } catch (e) {}
+  const url = URL.createObjectURL(blob);
+  let duration = await getAudioDuration(url);
+  if (!isFinite(duration) || !duration) duration = fallbackDur || 0;
+  ctx.media.voice = { type: blob.type || 'audio/webm', vidId: id, blobUrl: url, name, duration };
+}
+function deleteVoice() {
+  const ctx = getCtx();
+  if (ctx.media.voice?.vidId) hdDelete(ctx.media.voice.vidId).catch(() => {});
+  ctx.media.voice = null;
+  saveState(); render();
+}
+function renderCaptionsEditor() {
+  const box = document.getElementById('captions-editor');
+  if (!box) return;
+  const ctx = getCtx();
+  const v = ctx.media.voice;
+  const st = document.getElementById('voice-status');
+  if (st && !voiceState.recording) st.textContent = v ? `🎙 ${v.name || 'Voix-off'} · ${formatDuration(v.duration)} — la musique est automatiquement baissée pendant la voix.` : 'Aucune voix-off.';
+  const del = document.getElementById('voice-del-btn'); if (del) del.style.display = v ? '' : 'none';
+  const on = document.getElementById('captions-on'); if (on) on.checked = !!ctx.texts.captionsOn;
+  if (box.contains(document.activeElement)) return;
+  const caps = ctx.texts.captions || [];
+  box.innerHTML = caps.map((c, i) => `<div class="cap-row">
+      <input type="number" min="0" step="0.1" value="${c.start}" data-cap="${i}" data-capf="start" title="Apparition (s)">
+      <input type="text" value="${escapeHtml(c.text || '')}" data-cap="${i}" data-capf="text" maxlength="70">
+      <button class="scene-card-btn" type="button" data-capdel="${i}" title="Supprimer">×</button></div>`).join('');
+}
+
+// =====================================================================
+// 2. SAUVEGARDE : médias en IndexedDB + sauvegarde complète
+// =====================================================================
+async function hdDelete(id) {
+  const db = await hdOpenDB();
+  return new Promise(res => { const tx = db.transaction('hd', 'readwrite'); tx.objectStore('hd').delete(id); tx.oncomplete = res; tx.onerror = res; });
+}
+async function restoreStoredMedia() {
+  const all = [];
+  Object.values(state.perNeg || {}).forEach(p => {
+    Object.values(p.media || {}).forEach(m => { if (m && typeof m === 'object' && m.vidId && !m.blobUrl) all.push(m); });
+    (p.texts?.rooms || []).forEach(r => { if (r.media && r.media.vidId && !r.media.blobUrl) all.push(r.media); });
+  });
+  for (const m of all) {
+    try { const b = await hdGet(m.vidId); if (b) m.blobUrl = URL.createObjectURL(b); } catch (e) {}
+  }
+  if (all.length) render();
+}
+const MUSIC_KEY = 'sh-studio-music-v1';
+function saveMusicMeta() {
+  try {
+    localStorage.setItem(MUSIC_KEY, JSON.stringify({
+      library: musicState.library.filter(m => !m.team).map(({ id, name, duration, size }) => ({ id, name, duration, size })),
+      activeType: musicState.activeType, activeId: musicState.activeId, activePresetId: musicState.activePresetId,
+    }));
+  } catch (e) {}
+}
+async function loadMusicMeta() {
+  let meta = null;
+  try { meta = JSON.parse(localStorage.getItem(MUSIC_KEY) || 'null'); } catch (e) {}
+  if (!meta) return;
+  for (const m of meta.library || []) {
+    try { const b = await hdGet('mus_' + m.id); if (b) musicState.library.push({ ...m, blobUrl: URL.createObjectURL(b) }); } catch (e) {}
+  }
+  if (meta.activeType === 'preset' && meta.activePresetId) { musicState.activeType = 'preset'; musicState.activePresetId = meta.activePresetId; }
+  else if (meta.activeType === 'file' && meta.activeId) { musicState.activeType = 'file'; musicState.activeId = meta.activeId; }
+  renderMusicLibrary(); renderPresetGrid(); updateActiveMusicDisplay();
+}
+function blobToDataURL(b) { return new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(b); }); }
+async function exportBackup() {
+  const neg = getNeg();
+  if (!neg || neg.id === '__guest') return showToast('Créez d\'abord votre profil', 'error');
+  showToast('Préparation de la sauvegarde…', 'success', 2500);
+  const ctx = state.perNeg[neg.id];
+  const ids = new Set();
+  Object.values(ctx.media || {}).forEach(m => { if (m && m.hdId) ids.add(m.hdId); if (m && m.vidId) ids.add(m.vidId); });
+  (ctx.texts.rooms || []).forEach(r => { if (r.media?.hdId) ids.add(r.media.hdId); if (r.media?.vidId) ids.add(r.media.vidId); });
+  musicState.library.filter(m => !m.team).forEach(m => ids.add('mus_' + m.id));
+  const blobs = {};
+  for (const id of ids) { try { const b = await hdGet(id); if (b) blobs[id] = await blobToDataURL(b); } catch (e) {} }
+  const clean = JSON.parse(JSON.stringify(ctx, (k, v) => (k === 'blobUrl' || k === '_measuring') ? undefined : v));
+  const payload = {
+    type: 'square-habitat-backup-v1', exportedAt: new Date().toISOString(),
+    negotiator: neg, project: clean, blobs,
+    music: JSON.parse(localStorage.getItem(MUSIC_KEY) || 'null'),
+  };
+  const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+  const slug = (neg.name || 'profil').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `sauvegarde-studio-${slug}-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+  showToast(`✓ Sauvegarde téléchargée (${(blob.size / 1e6).toFixed(1)} Mo)`);
+}
+async function importBackup(data) {
+  try {
+    for (const [id, url] of Object.entries(data.blobs || {})) {
+      const b = await (await fetch(url)).blob();
+      await hdPut(id, b);
+    }
+    const inc = data.negotiator || {};
+    let existing = state.negotiators.find(n => n.id === inc.id) || state.negotiators.find(n => (n.name || '').toLowerCase() === (inc.name || '').toLowerCase());
+    const id = existing ? existing.id : (inc.id || newProfileId());
+    const profile = { ...inc, id };
+    if (existing) state.negotiators[state.negotiators.indexOf(existing)] = profile; else state.negotiators.push(profile);
+    const def = ensurePerNeg(id);
+    const pj = data.project || {};
+    state.perNeg[id] = { property: { ...def.property, ...(pj.property || {}) }, texts: { ...def.texts, ...(pj.texts || {}) }, media: { ...def.media, ...(pj.media || {}) } };
+    if (data.music) {
+      const cur = JSON.parse(localStorage.getItem(MUSIC_KEY) || 'null') || { library: [] };
+      const known = new Set(cur.library.map(m => m.id));
+      (data.music.library || []).forEach(m => { if (!known.has(m.id)) cur.library.push(m); });
+      localStorage.setItem(MUSIC_KEY, JSON.stringify({ ...cur, activeType: data.music.activeType, activeId: data.music.activeId, activePresetId: data.music.activePresetId }));
+      musicState.library = musicState.library.filter(m => m.team);
+      await loadMusicMeta();
+    }
+    state.selectedId = id;
+    saveState();
+    await restoreStoredMedia();
+    buildLobby(); refreshUserPill(); render(); renderVideosList();
+    document.getElementById('lobby').classList.add('hidden');
+    showToast('✓ Sauvegarde restaurée : ' + (inc.name || 'profil'));
+  } catch (e) { console.error(e); showToast('Sauvegarde illisible', 'error'); }
+}
+
+// =====================================================================
+// 9. BIBLIOTHÈQUE MUSICALE DE L'ÉQUIPE (dossier « musiques » du site)
+// =====================================================================
+async function loadTeamMusic() {
+  if (location.protocol === 'file:') return;
+  try {
+    const r = await fetch('musiques/musiques.json', { cache: 'no-store' });
+    if (!r.ok) return;
+    const list = await r.json();
+    (Array.isArray(list) ? list : []).forEach(t => {
+      if (!t || !t.file) return;
+      const id = 'team-' + t.file;
+      if (musicState.library.some(m => m.id === id)) return;
+      musicState.library.push({ id, team: true, name: t.name || t.file, mood: t.mood || '', url: 'musiques/' + t.file, duration: t.duration || 0, size: 0 });
+    });
+    renderTeamMusic();
+  } catch (e) {}
+}
+async function ensureTeamTrack(m) {
+  if (!m) return null;
+  if (m.blobUrl) return m.blobUrl;
+  if (!m.url) return null;
+  try { const b = await (await fetch(m.url)).blob(); m.blobUrl = URL.createObjectURL(b); return m.blobUrl; } catch (e) { return null; }
+}
+function renderTeamMusic() {
+  const wrap = document.getElementById('team-music-wrap'), box = document.getElementById('team-music');
+  if (!wrap || !box) return;
+  const team = musicState.library.filter(m => m.team);
+  wrap.style.display = team.length ? '' : 'none';
+  box.innerHTML = '';
+  team.forEach(m => {
+    const act = musicState.activeType === 'file' && musicState.activeId === m.id;
+    const it = document.createElement('div');
+    it.className = 'music-item' + (act ? ' active' : '');
+    it.innerHTML = `<div class="music-icon">${act ? '▶' : '🎧'}</div><div class="music-info"><div class="music-name">${escapeHtml(m.name)}</div><div class="music-meta">${escapeHtml(m.mood || 'Libre de droits')}${act ? ' · sélectionnée' : ''}</div></div>`;
+    it.addEventListener('click', async () => { it.style.opacity = .6; await ensureTeamTrack(m); setActiveMusic(m.id); });
+    box.appendChild(it);
+  });
+}
+
+// =====================================================================
+// 10. SUIVI D'UTILISATION (feuille Google de l'agence)
+// =====================================================================
+// Coller ici l'URL de l'application Web Apps Script (voir suivi/suivi-apps-script.gs)
+const STATS_URL = '';
+function reportUsage(duration) {
+  try {
+    const neg = getNeg(), p = getCtx().property;
+    const info = { date: new Date().toISOString(), agence: neg.agency || '', negociateur: neg.name || '', modele: tplOf(getCtx()),
+      format: p.format || '916', duree: Math.round(duration || 0), ville: p.city || '', prix: p.price || '' };
+    const log = JSON.parse(localStorage.getItem('sh-studio-usage') || '[]'); log.push(info);
+    localStorage.setItem('sh-studio-usage', JSON.stringify(log.slice(-500)));
+    if (STATS_URL) fetch(STATS_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(info) }).catch(() => {});
+  } catch (e) {}
+}
+
+// =====================================================================
+// TEXTE DE PUBLICATION (légende + mentions)
+// =====================================================================
+function buildPostText() {
+  const neg = getNeg(), ctx = getCtx(), p = ctx.property, tpl = tplOf(ctx);
+  const L = legalInfo(ctx);
+  const lines = [];
+  const cap = v => (v || '').trim();
+  const head = { nouveaute: '🆕 NOUVEAUTÉ', baisse: '📉 BAISSE DE PRIX', portes: '🚪 PORTES OUVERTES', vendu: '✅ VENDU', recrutement: '🤝 ON RECRUTE', classique: '🏡' }[tpl];
+  if (tpl === 'recrutement') {
+    lines.push(`${head} — ${cap(p.type) || 'Négociateur immobilier (H/F)'}${p.typeSub ? ' · ' + cap(p.typeSub) : ''}`);
+    lines.push(`📍 Square Habitat ${neg.agency || cap(p.city)}`);
+    if (cap(p.description)) lines.push('', cap(p.description));
+    const hl = [p.highlight1, p.highlight2, p.highlight3].map(cap).filter(Boolean);
+    if (hl.length) lines.push('', ...hl.map(h => '✔️ ' + h));
+    lines.push('', `📩 ${neg.name || ''} · ${neg.phone || ''}${neg.email ? ' · ' + neg.email : ''}`);
+  } else {
+    lines.push(`${head} — ${[cap(p.prefix), cap(p.type), cap(p.typeSub)].filter(Boolean).join(' ')}${p.city ? ' à ' + cap(p.city) : ''}${p.cp ? ' (' + cap(p.cp) + ')' : ''}`);
+    if (tpl === 'portes' && p.eventDate) lines.push(`📅 ${cap(p.eventDate)}`);
+    if (cap(p.description)) lines.push('', cap(p.description));
+    const hl = [p.surface ? '📐 ' + cap(p.surface) : '', ...[p.highlight1, p.highlight2, p.highlight3].map(h => cap(h) ? '✔️ ' + cap(h) : '')].filter(Boolean);
+    if (hl.length) lines.push('', ...hl);
+    if (tpl === 'vendu') {
+      lines.push('', `Vous souhaitez vendre ? Estimation offerte avec ${neg.name || 'votre conseiller'} 📞 ${neg.phone || ''}`);
+    } else {
+      lines.push('');
+      if (tpl === 'baisse' && p.oldPrice) lines.push(`💶 ${cap(p.price)} (au lieu de ${cap(p.oldPrice)})`);
+      else if (p.price) lines.push(`💶 ${cap(p.price)}`);
+      if (L.fees) lines.push(L.fees);
+      if (p.dpe || p.ges) lines.push(`DPE : ${p.dpe || 'NC'} · GES : ${p.ges || 'NC'}`);
+      if (L.excess) lines.push('⚠️ Logement à consommation énergétique excessive.');
+      if (L.energy) lines.push(L.energy);
+      if (p.copro === 'oui') {
+        lines.push(`Bien en copropriété${p.coproLots ? ' de ' + cap(p.coproLots) + ' lots' : ''}${p.coproCharges ? ' · charges annuelles moyennes : ' + cap(p.coproCharges) + (/€/.test(p.coproCharges) ? '' : ' €') : ''}${p.coproProc ? ' · procédure en cours : ' + cap(p.coproProc) : ' · pas de procédure en cours'}.`);
+      }
+      lines.push('Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques : www.georisques.gouv.fr');
+      lines.push('', `📞 ${neg.name || ''} — ${neg.phone || ''}${neg.email ? ' · ' + neg.email : ''}`);
+    }
+  }
+  lines.push(`Square Habitat ${neg.agency || ''} · Crédit Agricole`.replace(/\s+·/, ' ·'));
+  const city = (p.city || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+  const ag = (neg.agency || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+  lines.push('', ['#immobilier', city && tpl !== 'recrutement' ? '#' + city : '', ag ? '#' + ag : '', '#squarehabitat', '#vienne', tpl === 'recrutement' ? '#recrutement' : '#maison'].filter(Boolean).join(' '));
+  return lines.join('\n');
+}
+function updatePostText() { const ta = document.getElementById('post-text'); if (ta) ta.value = buildPostText(); }
+
+function setupNewFeatures() {
+  try { navigator.storage && navigator.storage.persist && navigator.storage.persist(); } catch (e) {}
+  restoreStoredMedia();
+  loadMusicMeta();
+  loadTeamMusic();
+  document.getElementById('backup-btn')?.addEventListener('click', exportBackup);
+  document.getElementById('voice-audio')?.addEventListener('ended', () => {
+    const a = document.getElementById('preview-audio'); if (a) a.volume = Math.min(1, musicState.volume);
+    if (musicSynth && musicSynth.ctx) musicSynth.setVolume(musicState.volume);
+  });
+  document.getElementById('post-copy-btn')?.addEventListener('click', async () => {
+    const ta = document.getElementById('post-text');
+    try { await navigator.clipboard.writeText(ta.value); } catch (e) { ta.select(); document.execCommand('copy'); }
+    showToast('✓ Texte copié — collez-le dans la légende de la publication');
+  });
+  document.getElementById('voice-rec-btn')?.addEventListener('click', () => voiceState.recording ? stopVoiceRecording() : startVoiceRecording());
+  document.getElementById('voice-del-btn')?.addEventListener('click', () => { if (confirm('Supprimer la voix-off ?')) deleteVoice(); });
+  document.getElementById('voice-file')?.addEventListener('change', async e => {
+    const f = e.target.files[0]; e.target.value = '';
+    if (!f) return;
+    await saveVoiceBlob(f, f.name.replace(/\.[^.]+$/, ''));
+    saveState(); render(); showToast('✓ Voix-off importée — ajoutez vos sous-titres');
+  });
+  document.getElementById('captions-on')?.addEventListener('change', e => { getCtx().texts.captionsOn = e.target.checked; saveState(); });
+  document.getElementById('cap-add-btn')?.addEventListener('click', () => {
+    const caps = getCtx().texts.captions = getCtx().texts.captions || [];
+    const last = caps[caps.length - 1];
+    caps.push({ start: last ? Math.round((last.start + 2.5) * 10) / 10 : 3, text: '' });
+    getCtx().texts.captionsOn = true;
+    saveState(); renderCaptionsEditor();
+  });
+  const ed = document.getElementById('captions-editor');
+  ed?.addEventListener('input', e => {
+    const i = e.target.dataset.cap; if (i == null) return;
+    const c = getCtx().texts.captions[i]; if (!c) return;
+    if (e.target.dataset.capf === 'start') { c.start = parseFloat(e.target.value) || 0; delete c.end; }
+    else c.text = e.target.value;
+    saveState();
+  });
+  ed?.addEventListener('click', e => {
+    const i = e.target.dataset.capdel; if (i == null) return;
+    getCtx().texts.captions.splice(+i, 1); saveState(); renderCaptionsEditor();
+  });
+  render();
 }
 
 function clearMedia(target) {
@@ -6966,6 +7899,7 @@ function togglePauseResume() {
     if (musicSynth.ctx) musicSynth.ctx.suspend().catch(()=>{});
     const audio = document.getElementById('preview-audio');
     if (audio) audio.pause();
+    const vo = document.getElementById('voice-audio'); if (vo) vo.pause();
     document.getElementById('pause-btn').textContent = '▶ Reprendre';
   } else {
     const pausedFor = Date.now() - pauseAt;
@@ -6977,6 +7911,7 @@ function togglePauseResume() {
     if (musicSynth.ctx) musicSynth.ctx.resume().catch(()=>{});
     const audio = document.getElementById('preview-audio');
     if (audio && audio.src) audio.play().catch(()=>{});
+    const vo = document.getElementById('voice-audio'); if (vo && vo.src && hasVoice()) vo.play().catch(()=>{});
     const elapsed = (Date.now() - playStart) / 1000;
     rescheduleVideosAfterResume(elapsed);
     const remaining = currentTotal - elapsed;
@@ -7044,6 +7979,8 @@ function seekTo(t) {
 function stopPlay() {
   playing = false;
   paused = false;
+  setCaptionAt(-1);
+  if (voiceState.recording) stopVoiceRecording();
   stopMusic();
   clearVideoTimers();
   clearTimeout(stopTimer);
@@ -7059,6 +7996,7 @@ function stopPlay() {
 function tickProgress() {
   if (!playing || paused) return;
   const elapsed = (Date.now() - playStart) / 1000;
+  setCaptionAt(elapsed);
   const pct = Math.min(100, (elapsed / currentTotal) * 100);
   document.getElementById('progress').style.width = pct + '%';
   document.getElementById('progress-thumb').style.left = pct + '%';
@@ -7316,7 +8254,9 @@ class OfflineMusicSynth extends MusicSynth {
     this.ctx = this._off;
     this.master = this.ctx.createGain();
     this.master.gain.value = musicState.volume;
-    this.master.connect(this.ctx.destination);
+    this.duckNode = this.ctx.createGain();
+    this.master.connect(this.duckNode);
+    this.duckNode.connect(this.ctx.destination);
     this.dry = this.ctx.createGain();
     this.dry.connect(this.master);
     this.reverb = this.ctx.createConvolver();
@@ -7335,29 +8275,61 @@ async function hdxRenderAudio(total) {
   const len = Math.ceil(total * SR);
   const Off = window.OfflineAudioContext || window.webkitOfflineAudioContext;
   if (!Off) return null;
+  const off = new Off(2, len, SR);
+  const voice = getCtx().media.voice;
+  const hasVoice = !!(voice && voice.blobUrl);
+  let voiceBuf = null;
+  if (hasVoice) { try { voiceBuf = await off.decodeAudioData(await (await fetch(voice.blobUrl)).arrayBuffer()); } catch (e) { console.warn('Voix-off illisible', e); } }
+  const vEnd = voiceBuf ? Math.min(total, voiceBuf.duration) : 0;
+  // Musique baissée seulement pendant la voix, puis remontée en douceur
+  const applyDuck = (param, base) => {
+    if (!voiceBuf) return;
+    param.setValueAtTime(base, 0);
+    param.linearRampToValueAtTime(base * VOICE_MUSIC_DUCK, 0.25);
+    param.setValueAtTime(base * VOICE_MUSIC_DUCK, Math.max(0.3, vEnd));
+    param.linearRampToValueAtTime(base, Math.min(total, vEnd + 0.8));
+  };
+  let any = false;
   if (musicState.activeType === 'preset' && musicState.activePresetId) {
     const preset = MUSIC_PRESETS.find(p => p.id === musicState.activePresetId);
-    if (!preset) return null;
-    const off = new Off(2, len, SR);
-    const synth = new OfflineMusicSynth(off);
-    synth.play(preset, total);
-    return await off.startRendering();
+    if (preset) {
+      const synth = new OfflineMusicSynth(off);
+      synth.play(preset, total);
+      applyDuck(synth.duckNode.gain, 1);
+      any = true;
+    }
+  } else {
+    const active = musicState.library.find(m => m.id === musicState.activeId);
+    const url = active && (active.blobUrl || await ensureTeamTrack(active));
+    if (url) {
+      const decoded = await off.decodeAudioData(await (await fetch(url)).arrayBuffer());
+      const src = off.createBufferSource();
+      src.buffer = decoded;
+      const g = off.createGain();
+      const v = musicState.volume;
+      g.gain.setValueAtTime(0, 0);
+      g.gain.linearRampToValueAtTime(v, 0.3);
+      g.gain.setValueAtTime(v, Math.max(0.4, total - 1.5));
+      g.gain.linearRampToValueAtTime(0, total);
+      const dg = off.createGain();
+      applyDuck(dg.gain, 1);
+      src.connect(g); g.connect(dg); dg.connect(off.destination);
+      src.start(0);
+      any = true;
+    }
   }
-  const active = musicState.library.find(m => m.id === musicState.activeId);
-  if (!active || !active.blobUrl) return null;
-  const buf = await (await fetch(active.blobUrl)).arrayBuffer();
-  const off = new Off(2, len, SR);
-  const decoded = await off.decodeAudioData(buf);
-  const src = off.createBufferSource();
-  src.buffer = decoded;
-  const g = off.createGain();
-  const v = musicState.volume;
-  g.gain.setValueAtTime(0, 0);
-  g.gain.linearRampToValueAtTime(v, 0.3);
-  g.gain.setValueAtTime(v, Math.max(0.4, total - 1.5));
-  g.gain.linearRampToValueAtTime(0, total);
-  src.connect(g); g.connect(off.destination);
-  src.start(0);
+  if (voiceBuf) {
+    try {
+      const vs = off.createBufferSource();
+      vs.buffer = voiceBuf;
+      const vg = off.createGain();
+      vg.gain.value = 1.0;
+      vs.connect(vg); vg.connect(off.destination);
+      vs.start(0);
+      any = true;
+    } catch (e) { console.warn('Voix-off illisible', e); }
+  }
+  if (!any) return null;
   return await off.startRendering();
 }
 
@@ -7574,7 +8546,8 @@ async function hdxRenderFrame(R, t, vtimes) {
   C.fillStyle = '#000';
   C.fillRect(0, 0, HDX.W, HDX.H);
 
-  const visible = R.scenes.filter(sc => parseFloat(getComputedStyle(sc.el).opacity) > 0.002);
+  setCaptionAt(t);
+  const visible = R.scenes.filter(sc => sc.el.offsetWidth > 0 && parseFloat(getComputedStyle(sc.el).opacity) > 0.002);
   for (const sc of visible) {
     const op = parseFloat(getComputedStyle(sc.el).opacity);
     const L = R.lctx;
@@ -7597,9 +8570,10 @@ async function hdxRenderFrame(R, t, vtimes) {
     C.globalAlpha = 1;
   }
   // Éléments hors scènes (pastille rythmique…)
-  if (R.extras.length) {
+  const ex = R.extras.filter(sc => sc.el.offsetWidth > 0 && getComputedStyle(sc.el).display !== 'none');
+  if (ex.length) {
     const sh = shell.cloneNode(false);
-    R.extras.forEach(sc => sh.appendChild(hdxCloneScene(R, sc, false)));
+    ex.forEach(sc => sh.appendChild(hdxCloneScene(R, sc, false)));
     const im = await hdxSvgLayer(R, new XMLSerializer().serializeToString(sh), true);
     C.drawImage(im, 0, 0, HDX.W, HDX.H);
   }
@@ -7613,7 +8587,7 @@ function hdxShowProgress(show, pct, label) {
     el.innerHTML = `<div class="hdx-box"><div class="hdx-title">🎬 Création de la vidéo HD</div>
       <div class="hdx-label" id="hdx-label">Préparation…</div>
       <div class="hdx-bar"><div class="hdx-fill" id="hdx-fill"></div></div>
-      <div class="hdx-hint">1080×1920 · 30 images/s · MP4 prêt pour Instagram &amp; Facebook.<br>Gardez cet onglet ouvert au premier plan.</div>
+      <div class="hdx-hint"><span id="hdx-dims">1080×1920</span> · 30 images/s · MP4 prêt pour Instagram &amp; Facebook.<br>Gardez cet onglet ouvert au premier plan.</div>
       <button class="btn btn-secondary" id="hdx-cancel" type="button">Annuler</button></div>`;
     document.body.appendChild(el);
     el.querySelector('#hdx-cancel').addEventListener('click', () => { HDX.cancelled = true; });
@@ -7621,13 +8595,17 @@ function hdxShowProgress(show, pct, label) {
   el.classList.toggle('active', !!show);
   if (pct != null) el.querySelector('#hdx-fill').style.width = Math.round(pct) + '%';
   if (label) el.querySelector('#hdx-label').textContent = label;
+  const d = el.querySelector('#hdx-dims'); if (d) d.textContent = HDX.W + '×' + HDX.H;
 }
 
 async function exportVideoHD() {
   if (!hdxSupported()) return 'unsupported';
+  { const F = { '916': [1080, 1920], '45': [1080, 1350], '169': [1920, 1080] }[getCtx().property.format || '916'] || [1080, 1920]; HDX.W = F[0]; HDX.H = F[1]; }
   const vcfg = await hdxPickVideoConfig();
   if (!vcfg) return 'unsupported';
   HDX.cancelled = false;
+  const FMT = { '916': [1080, 1920], '45': [1080, 1350], '169': [1920, 1080] }[getCtx().property.format || '916'] || [1080, 1920];
+  HDX.W = FMT[0]; HDX.H = FMT[1];
   hdxShowProgress(true, 0, 'Préparation des médias…');
   let R = null;
   try {
@@ -7702,6 +8680,7 @@ async function exportVideoHD() {
     const blob = new Blob([muxer.target.buffer], { type: 'video/mp4' });
     console.log('[T] HD export done', nFrames, 'frames in', ((performance.now() - t0) / 1000).toFixed(1), 's', (blob.size / 1e6).toFixed(1), 'MB');
     window.__hdxLastBlob = blob;
+    reportUsage(total);
     hdxCleanup(R);
     hdxShowProgress(false);
     promptSaveVideo(blob, total);
@@ -7723,6 +8702,7 @@ function hdxCleanup(R) {
     R.bitmaps.forEach(b => { try { if (b && b.close) b.close(); } catch (e) {} });
   }
   try { restartScenes(); } catch (e) {}
+  try { setCaptionAt(-1); } catch (e) {}
 }
 
 // ============================================================
@@ -7804,7 +8784,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const px = document.getElementById(slot + '-posx');
     if (px) px.addEventListener('input', e => { getCtx().media[slot + 'PosX'] = parseFloat(e.target.value); saveState(); render(); });
   });
-  setTimeout(hdGarbageCollect, 3000);
+  setTimeout(hdGarbageCollect, 8000);
+  setupNewFeatures();
   document.getElementById('reset-btn').addEventListener('click', resetCurrent);
   document.getElementById('add-scene-btn').addEventListener('click', addRoom);
 
