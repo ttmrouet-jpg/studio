@@ -8447,7 +8447,10 @@ async function hdxPrepare() {
   const cctx = canvas.getContext('2d', { alpha: false });
   const lctx = layer.getContext('2d');
   [cctx, lctx].forEach(c => { c.imageSmoothingEnabled = true; c.imageSmoothingQuality = 'high'; });
-  return { video, screen, anims, scenes, extras, bitmaps, W0, H0, K, css, bodyFont, canvas, cctx, layer, lctx };
+  const R = { video, screen, anims, scenes, extras, bitmaps, W0, H0, K, css, bodyFont, canvas, cctx, layer, lctx };
+  R.svgMode = await hdxProbeSvgMode(R);
+  console.log('[T] svg mode', R.svgMode);
+  return R;
 }
 
 // Heure média d'une vidéo de scène à l'instant t (même logique que la lecture)
@@ -8521,17 +8524,52 @@ function hdxDrawMedia(R, ctx, el, sr) {
   ctx.restore();
 }
 
-async function hdxSvgLayer(R, xhtml, transparent) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${HDX.W}" height="${HDX.H}" viewBox="0 0 ${R.W0} ${R.H0}">`
+// Deux façons de mettre le calque texte à l'échelle 1080 px :
+//  - 'viewbox'   : agrandissement vectoriel par le viewBox (Chrome / Edge ordinateur)
+//  - 'transform' : agrandissement CSS à l'intérieur du SVG (iPhone / Safari ignorent le viewBox
+//                  des foreignObject → contenu minuscule en haut à gauche)
+function hdxSvgString(R, inner, transparent, mode) {
+  const W = HDX.W, H = HDX.H, K = W / R.W0;
+  const wrapStyle = `width:${R.W0}px;height:${R.H0}px;position:relative;overflow:hidden;background:${transparent ? 'transparent' : '#000'};font-family:${R.bodyFont};-webkit-font-smoothing:antialiased;`;
+  if (mode === 'transform') {
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">`
+      + `<foreignObject x="0" y="0" width="${W}" height="${H}">`
+      + `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${W}px;height:${H}px;overflow:hidden;">`
+      + `<div style="${wrapStyle}transform:scale(${K});transform-origin:0 0;">${inner}</div>`
+      + `</div></foreignObject></svg>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${R.W0} ${R.H0}">`
     + `<foreignObject x="0" y="0" width="${R.W0}" height="${R.H0}">`
-    + `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${R.W0}px;height:${R.H0}px;position:relative;overflow:hidden;background:${transparent ? 'transparent' : '#000'};font-family:${R.bodyFont};-webkit-font-smoothing:antialiased;">`
-    + `<style><![CDATA[${R.css}]]></style>`
-    + `<div class="screen" style="width:${R.W0}px;height:${R.H0}px;border-radius:0;aspect-ratio:auto;background:transparent;">${xhtml}</div>`
-    + `</div></foreignObject></svg>`;
+    + `<div xmlns="http://www.w3.org/1999/xhtml" style="${wrapStyle}">${inner}</div></foreignObject></svg>`;
+}
+async function hdxLoadSvg(svg) {
   const im = new Image();
   im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   await im.decode();
   return im;
+}
+// Test au démarrage : quel mode remplit vraiment toute l'image sur ce navigateur ?
+async function hdxProbeSvgMode(R) {
+  const c = document.createElement('canvas');
+  c.width = HDX.W; c.height = HDX.H;
+  const x = c.getContext('2d', { willReadFrequently: true });
+  const inner = `<div style="position:absolute;inset:0;background:#ff0000;"></div>`;
+  for (const mode of ['viewbox', 'transform']) {
+    try {
+      x.clearRect(0, 0, c.width, c.height);
+      const im = await hdxLoadSvg(hdxSvgString(R, inner, true, mode));
+      x.drawImage(im, 0, 0, HDX.W, HDX.H);
+      const px = x.getImageData(HDX.W - 6, HDX.H - 6, 1, 1).data;
+      const mid = x.getImageData(Math.round(HDX.W * 0.6), Math.round(HDX.H * 0.6), 1, 1).data;
+      if (px[0] > 200 && px[1] < 60 && mid[0] > 200 && mid[1] < 60) return mode;
+    } catch (e) {}
+  }
+  return 'transform';
+}
+async function hdxSvgLayer(R, xhtml, transparent) {
+  const inner = `<style><![CDATA[${R.css}]]></style>`
+    + `<div class="screen" style="width:${R.W0}px;height:${R.H0}px;border-radius:0;aspect-ratio:auto;background:transparent;">${xhtml}</div>`;
+  return hdxLoadSvg(hdxSvgString(R, inner, transparent, R.svgMode || 'viewbox'));
 }
 
 function hdxCloneScene(R, sc, sceneOpacityOne) {
