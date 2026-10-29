@@ -1698,6 +1698,30 @@
   .fmt-169 .intro2-text { top: 38%; }
   .fmt-169 .contact-block { flex-wrap: wrap; max-width: 380px; }
 
+  /* Bouton de fin placé sous les coordonnées */
+  .outro-content .cta-pulse { position: relative; left: auto; bottom: auto !important; margin-top: 12px; transform: scale(.5); flex-shrink: 0; }
+  .video.playing .outro-content .cta-pulse {
+    animation: ctaPop2 .5s cubic-bezier(0.34,1.56,0.64,1) calc(var(--outro-start, 27s) + 2.6s - var(--seek-offset, 0s)) forwards,
+               ctaPulse2 1.2s ease-in-out calc(var(--outro-start, 27s) + 3.5s - var(--seek-offset, 0s)) infinite;
+  }
+  @keyframes ctaPop2 { to { opacity: 1; transform: scale(1); } }
+  @keyframes ctaPulse2 { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 1; transform: scale(1.07); } }
+  .scene-outro .outro-content { inset: 25.5% 0 20.5% 0; }
+  .scene-outro .agency-line { bottom: 17%; }
+  .fmt-45 .scene-outro .outro-content { inset: 20% 0 8% 0; }
+  .fmt-45 .outro-logo-top { top: 3%; width: 40px; }
+  .fmt-45 .scene-outro .agency-line { bottom: 3%; }
+  .fmt-169 .scene-outro .outro-content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; inset: 10% 5% 16% 36%; padding: 0; }
+  .fmt-169 .scene-outro .negotiator-photo { position: absolute; left: -150px; top: 50%; width: 110px; height: 110px; margin-top: -55px !important; }
+  .fmt-169 .outro-content .cta-pulse { margin-top: 10px; }
+  .fmt-169 .contact-block { flex-direction: column !important; align-items: flex-start; max-width: none !important; }
+  .fmt-169 .outro-logo-top { top: 5%; }
+  .fmt-169 .scene-outro .negotiator-photo { margin-top: -40px !important; }
+  .fmt-169 .hook-phrase { max-width: 420px; }
+  .fmt-169 .scene-outro .agency-line { bottom: 4%; }
+  .fmt-169 .outro-content .cta-pulse { grid-column: 2; justify-self: start; }
+  .fmt-169 .negotiator-photo { grid-row: 1 / span 5; }
+
   /* Divers */
   .post-text { width:100%; min-height:180px; font-size:12px; line-height:1.45; padding:10px; border:1px solid var(--sh-border); border-radius:10px; font-family:inherit; resize:vertical; }
   .team-music-title { font-size:11px; font-weight:800; color:var(--sh-teal-dark); text-transform:uppercase; letter-spacing:1px; margin-top:14px; }
@@ -2759,8 +2783,8 @@ CHAUFFÉE</div>
                   <span data-render="neg-email">prenom@squarehabitat66.fr</span>
                 </div>
               </div>
+              <div class="cta-pulse" data-render="cta">APPELEZ-MOI</div>
             </div>
-            <div class="cta-pulse" data-render="cta">APPELEZ-MOI</div>
             <div class="agency-line">SQUARE HABITAT · CRÉDIT AGRICOLE</div>
           </div>
 
@@ -7166,10 +7190,11 @@ const SALE_TEMPLATES = ['nouveaute', 'baisse', 'portes', 'classique'];
 const tplOf = ctx => TEMPLATES[ctx.property.template] ? ctx.property.template : 'nouveaute';
 
 function outroHookFor(neg, ctx) {
-  if ((ctx.property.outroHook || '').trim()) return ctx.property.outroHook.trim();
+  const nb = v => (v || '').replace(/ ([?!:;»])/g, '\u00a0$1');
+  if ((ctx.property.outroHook || '').trim()) return nb(ctx.property.outroHook.trim());
   const t = TEMPLATES[tplOf(ctx)];
-  if (t.hook) return t.hook;
-  return neg.hook || '';
+  if (t.hook) return nb(t.hook);
+  return nb(neg.hook || '');
 }
 
 function parseEuro(v) {
